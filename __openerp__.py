@@ -29,9 +29,9 @@
     'author': "Humanytek",
     'website': "http://www.humanytek.com",
     'category': 'Sales',
-    'version': '1.2.0',
+    'version': '1.0.0',
     'depends': ['product'],
-    'data': [        
+    'data': [
     ],
     'demo': [
     ],
