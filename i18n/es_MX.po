@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_sale_price_greater_than_cost
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e-20170207\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-11 19:22+0000\n"
+"PO-Revision-Date: 2017-08-11 15:25-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: product_sale_price_greater_than_cost
+#: model:ir.model,name:product_sale_price_greater_than_cost.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_sale_price_greater_than_cost
+#: model:ir.model,name:product_sale_price_greater_than_cost.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: product_sale_price_greater_than_cost
+#: code:addons/product_sale_price_greater_than_cost/models/product_attribute_value.py:53
+#, python-format
+msgid "The new price of the attribute causes that the sale price of one or several variants is below the cost of the same."
+msgstr "El nuevo precio del atributo causa que el precio de venta de una o varias variantes que lo contienen quede por debajo del costo de la misma."
+
+#. module: product_sale_price_greater_than_cost
+#: code:addons/product_sale_price_greater_than_cost/models/product_product.py:41
+#: code:addons/product_sale_price_greater_than_cost/models/product_template.py:41
+#: code:addons/product_sale_price_greater_than_cost/models/product_template.py:48
+#, python-format
+msgid "The selling price can not be lower than cost."
+msgstr "El precio de venta no debe ser inferior al costo."
+
+#. module: product_sale_price_greater_than_cost
+#: model:ir.model,name:product_sale_price_greater_than_cost.model_product_attribute_value
+msgid "product.attribute.value"
+msgstr "product.attribute.value"
