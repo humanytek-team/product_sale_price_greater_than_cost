@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.0.0] - 2017-08-11
 ### Added
 - Adds constraint to model of Products Templates (product.template) that checks that the selling price of the product not be lower than cost.
 - Extends method create of model Products Templates (product.template) for validate that the selling price not be lower than cost on create operation.
