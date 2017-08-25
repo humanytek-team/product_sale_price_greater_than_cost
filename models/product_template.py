@@ -37,14 +37,14 @@ class ProductTemplate(models.Model):
             if record.product_variant_ids.mapped('standard_price'):
                 min_standard_price = min(
                     record.product_variant_ids.mapped('standard_price'))
-                if record.list_price < min_standard_price:
+                if record.list_price <= min_standard_price:
                     raise ValidationError(_(
                         'The selling price can not be lower than cost.'))
 
     @api.model
     def create(self, vals):
 
-        if vals.get('list_price') < vals.get('standard_price'):
+        if vals.get('list_price') <= vals.get('standard_price'):
             raise ValidationError(_(
                 'The selling price can not be lower than cost.'))
 

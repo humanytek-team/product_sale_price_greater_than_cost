@@ -37,7 +37,7 @@ class product_product(osv.osv):
         self, cr, uid, id, name, value, args, context=None):
 
         product = self.browse(cr, uid, id, context=context)
-        if value < product.standard_price:
+        if value <= product.standard_price:
             raise ValidationError(_(
                 'The selling price can not be lower than cost.'))
 
