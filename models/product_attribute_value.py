@@ -49,7 +49,7 @@ class ProductAttributeValue(models.Model):
 
                 for variant in product_template_variants:
 
-                    if variant.lst_price < variant.standard_price:
+                    if variant.lst_price <= variant.standard_price:
                         raise ValidationError(_(
                                 'The new price of the attribute causes that the sale price of one or several variants is below the cost of the same.'
                                 ))
