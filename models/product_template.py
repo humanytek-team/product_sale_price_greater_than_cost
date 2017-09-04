@@ -41,6 +41,12 @@ class ProductTemplate(models.Model):
                     raise ValidationError(_(
                         'The selling price can not be lower than cost.'))
 
+            if record.seller_ids:
+                for seller in record.seller_ids:
+                    if record.list_price <= seller.price:
+                        raise ValidationError(_(
+                            'The selling price can not be lower than cost.'))
+
     @api.model
     def create(self, vals):
 
@@ -48,4 +54,33 @@ class ProductTemplate(models.Model):
             raise ValidationError(_(
                 'The selling price can not be lower than cost.'))
 
+        if vals.get('seller_ids'):
+            for record in vals.get('seller_ids'):
+                seller = record[2]
+                if vals.get('list_price') <= seller['price']:
+                    raise ValidationError(_(
+                        'The selling price can not be lower than cost.'))
+
         return super(ProductTemplate, self).create(vals)
+
+    @api.multi
+    def write(self, vals):
+
+        if 'seller_ids' in vals:
+            for record in vals.get('seller_ids'):
+
+                if isinstance(record[2], dict):
+                    seller = record[2]
+                    if 'price' in seller:
+                        list_price = self.list_price
+
+                        if 'list_price' in vals:
+                            list_price = vals['list_price']
+
+                        if seller['price'] >= list_price:
+                            raise ValidationError(
+                                _(
+                                'The selling price can not be lower than cost.'
+                                ))
+
+        return super(ProductTemplate, self).write(vals)
