@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.3] - 2017-12-12
+### changed
+- Constraint doesn't not applies if the sale price and purchase price are equal to zero.
+
 ## [1.0.0] - 2017-08-11
 ### Added
 - Adds constraint to model of Products Templates (product.template) that checks that the selling price of the product not be lower than cost.

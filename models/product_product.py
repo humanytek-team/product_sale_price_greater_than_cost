@@ -34,12 +34,15 @@ class product_product(osv.osv):
             cr, uid, ids, name, arg, context=context)
 
     def _set_product_lst_price(
-        self, cr, uid, id, name, value, args, context=None):
+            self, cr, uid, id, name, value, args, context=None):
 
         product = self.browse(cr, uid, id, context=context)
+
         if value <= product.standard_price:
-            raise ValidationError(_(
-                'The selling price can not be lower than cost.'))
+            zero = value == 0 and product.standard_price == 0
+            if not zero:
+                raise ValidationError(_(
+                    'The selling price can not be lower than cost.'))
 
         return super(product_product, self)._set_product_lst_price(
             cr, uid, id, name, value, args, context=context)
